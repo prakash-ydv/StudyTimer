@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTimer</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <div class="wrapper h-screen w-screen flex flex-col items-center justify-center bg-black">
+
+        <div class="title  w-full flex items-center justify-center text-3xl font-bold">
+            <h1 class="text-white p-2">TIMER</h1>
+        </div>
+
+        <div class="timers h-full w-full flex flex-col md:flex-row ">
+            <div class="study h-1/2 w-full md:h-full md:w-1/2 flex items-center justify-center">
+
+                <div class=" h-[300px] lg:h-[500px] w-[300px] lg:w-[500px] border-4 border-green-500 rounded-full flex flex-col items-center justify-evenly ">
+                    <h1 class="select-none text-6xl font-bold text-white" ><span id="studyMinute">00</span> : <span id="studySecond">00</span></h1>
+                    <button onclick="startStudy();" class="bg-green-500 p-2 px-5 rounded-lg font-bold text-lg text-white">STUDY</button>
+                </div>
+
+            </div>
+    
+            <div class="rest h-1/2 w-full md:h-full md:w-1/2 flex items-center justify-center">
+
+                <div class=" h-[300px] lg:h-[500px] w-[300px] lg:w-[500px] border-4 border-red-500 rounded-full flex flex-col items-center justify-evenly ">
+                    <h1 class="select-none text-6xl font-bold text-white" ><span id="restminute">00</span> : <span id="restSecond">00</span></h1>
+                    <button onclick="startRest()" class="bg-red-500 p-2 px-5 rounded-lg font-bold text-lg text-white">REST</button>
+                </div>
+
+            </div>
+        </div>
+
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
