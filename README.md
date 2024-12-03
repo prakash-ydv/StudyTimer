@@ -1,37 +1,37 @@
-# Study and Rest Timer
+# ⌛ Study and Rest Timer
 
 This project provides a simple timer application for tracking study and rest periods. It features a visually appealing UI built using HTML and Tailwind CSS and includes JavaScript logic to manage the timers efficiently.
 
 ---
 
-## Features
+## ✨ Features
 
-- **Study Timer**: Tracks the time spent studying.
-- **Rest Timer**: Tracks the time spent resting.
-- **Switch Timers**: Easily switch between study and rest timers.
-- **Prevent Overlapping Intervals**: Ensures only one timer runs at a time to prevent conflicts.
-- **Responsive Design**: Adjusts to different screen sizes for an optimal experience.
+- **🕒 Study Timer**: Tracks the time spent studying.
+- **☕ Rest Timer**: Tracks the time spent resting.
+- **↻ Switch Timers**: Easily switch between study and rest timers.
+- **🚫 Prevent Overlapping Intervals**: Ensures only one timer runs at a time to prevent conflicts.
+- **🌐 Responsive Design**: Adjusts to different screen sizes for an optimal experience.
 
 ---
 
-## Project Structure
+## 🔮 Project Structure
 
-### Files
+### 🗋 Files
 - `index.html`: The main HTML file containing the structure of the application.
 - `output.css`: Tailwind CSS file for styling.
 - `script.js`: JavaScript file containing the logic for managing the timers.
 
 ---
 
-## HTML Structure
+## ⚙️ HTML Structure
 
 The HTML file (`index.html`) consists of two primary sections:
 
-1. **Study Timer**:
+1. **🕒 Study Timer**:
    - A circular timer display bordered in green.
    - A button labeled **STUDY** to start the study timer.
 
-2. **Rest Timer**:
+2. **☕ Rest Timer**:
    - A circular timer display bordered in red.
    - A button labeled **REST** to start the rest timer.
 
@@ -48,11 +48,11 @@ The HTML file (`index.html`) consists of two primary sections:
 
 ---
 
-## JavaScript Logic
+## 📊 JavaScript Logic
 
 The core functionality is implemented in `script.js`, which handles the study and rest timers, ensuring they do not overlap.
 
-### Variables
+### ⚛ Variables
 - `studyMinute`, `studySecond`: DOM elements for the study timer display.
 - `restMinute`, `restSecond`: DOM elements for the rest timer display.
 - `studySecondCounter`, `studyMinuteCounter`: Counters for the study timer.
@@ -60,7 +60,7 @@ The core functionality is implemented in `script.js`, which handles the study an
 - `isStudying`, `isResting`: Flags to track the active timer.
 - `studyInterval`, `restInterval`: Interval IDs for study and rest timers.
 
-### Functions
+### 🗒 Functions
 
 #### `startStudy()`
 Starts the study timer and stops the rest timer if it's running.
@@ -136,7 +136,7 @@ function startRestTimer() {
 
 ---
 
-## How to Use
+## 🔧 How to Use
 
 1. Clone the repository:
    ```bash
@@ -152,13 +152,17 @@ function startRestTimer() {
 
 ---
 
-## Customization
+## 🎨 Customization
 - Modify `output.css` to change the styles of the timer and buttons.
 - Adjust the logic in `script.js` to add new features, such as alerts when a timer completes.
 
 ---
 
+## 📄 License
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
 
-## Contributions
+---
+
+## 🚀 Contributions
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
