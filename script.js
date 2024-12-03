@@ -1,40 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyTimer</title>
-    <link rel="stylesheet" href="output.css">
-</head>
-<body>
-    <div class="wrapper h-screen w-screen flex flex-col items-center justify-center bg-black">
+let studyMinute = document.getElementById('studyMinute');
+let studySecond = document.getElementById('studySecond');
 
-        <div class="title  w-full flex items-center justify-center text-3xl font-bold">
-            <h1 class="text-white p-2">TIMER</h1>
-        </div>
+let restMinute = document.getElementById('restMinute');
+let restSecond = document.getElementById('restSecond');
 
-        <div class="timers h-full w-full flex flex-col md:flex-row ">
-            <div class="study h-1/2 w-full md:h-full md:w-1/2 flex items-center justify-center">
+let studySecondCounter = 0;
+let studyMinuteCounter = 0;
 
-                <div class=" h-[300px] lg:h-[500px] w-[300px] lg:w-[500px] border-4 border-green-500 rounded-full flex flex-col items-center justify-evenly ">
-                    <h1 class="select-none text-6xl font-bold text-white" ><span id="studyMinute">00</span> : <span id="studySecond">00</span></h1>
-                    <button onclick="startStudy();" class="bg-green-500 p-2 px-5 rounded-lg font-bold text-lg text-white">STUDY</button>
-                </div>
+let restMinuteCounter = 0;
+let restSecondCounter = 0;
 
-            </div>
-    
-            <div class="rest h-1/2 w-full md:h-full md:w-1/2 flex items-center justify-center">
+let isStudying = false;
+let isResting = false;
 
-                <div class=" h-[300px] lg:h-[500px] w-[300px] lg:w-[500px] border-4 border-red-500 rounded-full flex flex-col items-center justify-evenly ">
-                    <h1 class="select-none text-6xl font-bold text-white" ><span id="restminute">00</span> : <span id="restSecond">00</span></h1>
-                    <button onclick="startRest()" class="bg-red-500 p-2 px-5 rounded-lg font-bold text-lg text-white">REST</button>
-                </div>
+let studyInterval = null;
+let restInterval = null;
 
-            </div>
-        </div>
+function startStudy() {
+    if (studyInterval) return; // Prevent multiple intervals
+    isStudying = true;
+    isResting = false;
+    stopResting(); // Ensure rest timer is stopped
+    studyInterval = setInterval(startTimer, 1000);
+}
 
-        
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+function stopStudy() {
+    clearInterval(studyInterval);
+    studyInterval = null; // Reset interval ID
+}
+
+function startRest() {
+    if (restInterval) return; // Prevent multiple intervals
+    isResting = true;
+    isStudying = false;
+    stopStudy(); // Ensure study timer is stopped
+    restInterval = setInterval(startRestTimer, 1000);
+}
+
+function stopResting() {
+    clearInterval(restInterval);
+    restInterval = null; // Reset interval ID
+}
+
+function startTimer() {
+    if (studySecondCounter < 59) {
+        studySecondCounter += 1;
+    } else {
+        studySecondCounter = 0;
+        studyMinuteCounter += 1;
+    }
+    // Update display with two-digit format
+    studySecond.textContent = String(studySecondCounter).padStart(2, '0');
+    studyMinute.textContent = String(studyMinuteCounter).padStart(2, '0');
+}
+
+function startRestTimer() {
+    if (restSecondCounter < 59) {
+        restSecondCounter += 1;
+    } else {
+        restSecondCounter = 0;
+        restMinuteCounter += 1;
+    }
+    // Update display with two-digit format
+    restSecond.textContent = String(restSecondCounter).padStart(2, '0');
+    restMinute.textContent = String(restMinuteCounter).padStart(2, '0');
+}
