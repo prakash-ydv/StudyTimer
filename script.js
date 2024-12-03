@@ -50,8 +50,8 @@ function startTimer() {
         studyMinuteCounter += 1;
     }
     // Update display with two-digit format
-    studySecond.textContent = String(studySecondCounter).padStart(2, '0');
-    studyMinute.textContent = String(studyMinuteCounter).padStart(2, '0');
+    studySecond.innerHTML = String(studySecondCounter).padStart(2, '0');
+    studyMinute.innerHTML = String(studyMinuteCounter).padStart(2, '0');
 }
 
 function startRestTimer() {
@@ -62,6 +62,6 @@ function startRestTimer() {
         restMinuteCounter += 1;
     }
     // Update display with two-digit format
-    restSecond.textContent = String(restSecondCounter).padStart(2, '0');
-    restMinute.textContent = String(restMinuteCounter).padStart(2, '0');
+    restSecond.innerHTML = String(restSecondCounter).padStart(2, '0');
+    restMinute.innerHTML = String(restMinuteCounter).padStart(2, '0');
 }
